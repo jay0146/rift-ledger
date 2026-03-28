@@ -1,0 +1,15 @@
+{
+  "name": "league-stats-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local League of Legends stats tracker powered by the Riot API",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  }
+}

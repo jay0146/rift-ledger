@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings — Rift Ledger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <main class="shell">
+
+      <nav class="site-nav">
+        <a href="/" class="nav-brand">Rift Ledger</a>
+        <a href="/" class="nav-link">Player Stats</a>
+        <a href="/live.html" class="nav-link">Live Game</a>
+        <a href="/settings.html" class="nav-link nav-link--active">Settings</a>
+      </nav>
+
+      <section class="hero panel">
+        <p class="eyebrow">Configuration</p>
+        <h1>Settings</h1>
+        <p class="lede">
+          Manage your Riot API key. Developer keys expire every 24 hours and must be regenerated at
+          <a href="https://developer.riotgames.com" target="_blank" rel="noopener" class="hero-link">developer.riotgames.com</a>.
+        </p>
+        <div class="hero-meta">
+          <span>24-hour dev keys</span>
+          <span>Stored locally</span>
+          <span>Server-side only</span>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top: 18px; max-width: 600px;">
+        <div class="panel-heading">
+          <p class="eyebrow">Riot API key</p>
+          <h2>Key management</h2>
+        </div>
+        <form id="api-key-form" class="stacked-form">
+          <label for="api-key">Developer or personal key</label>
+          <textarea
+            id="api-key"
+            name="apiKey"
+            rows="4"
+            placeholder="RGAPI-..."
+            spellcheck="false"
+            required
+          ></textarea>
+          <button type="submit">Save key</button>
+          <p id="key-status" class="status-text">Checking saved key status...</p>
+          <p id="key-expiry" class="status-text muted"></p>
+        </form>
+      </section>
+
+      <footer class="site-footer">
+        <p>Rift Ledger &mdash; Local League of Legends stats tracker</p>
+        <p>Not affiliated with Riot Games &middot; <a href="https://developer.riotgames.com" target="_blank" rel="noopener">Riot API</a></p>
+      </footer>
+
+    </main>
+    <script src="/settings.js" defer></script>
+  </body>
+</html>

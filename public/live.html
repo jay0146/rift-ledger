@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Game — Rift Ledger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <main class="shell">
+
+      <nav class="site-nav">
+        <a href="/" class="nav-brand">Rift Ledger</a>
+        <a href="/" class="nav-link">Player Stats</a>
+        <a href="/live.html" class="nav-link nav-link--active">Live Game</a>
+        <a href="/settings.html" class="nav-link">Settings</a>
+      </nav>
+
+      <section class="hero panel">
+        <p class="eyebrow">Spectator</p>
+        <h1>Live Game</h1>
+        <p class="lede">
+          Look up any Riot ID to see if they are currently in a game. Shows both teams, champions, and game duration in real time.
+        </p>
+        <div class="hero-meta">
+          <span>Spectator V5</span>
+          <span>Real-time</span>
+          <span>All regions</span>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top: 18px;">
+        <div class="panel-heading">
+          <p class="eyebrow">Player lookup</p>
+          <h2>Search a Riot ID</h2>
+        </div>
+        <form id="live-form" class="stacked-form">
+          <div class="field-row">
+            <div>
+              <label for="game-name">Game name</label>
+              <input id="game-name" name="gameName" placeholder="Doublelift" required />
+            </div>
+            <div>
+              <label for="tag-line">Tag line</label>
+              <input id="tag-line" name="tagLine" placeholder="NA1" required />
+            </div>
+          </div>
+          <label for="region">Platform region</label>
+          <select id="region" name="region">
+            <option value="na1">NA1</option>
+            <option value="euw1">EUW1</option>
+            <option value="eun1">EUN1</option>
+            <option value="kr">KR</option>
+            <option value="br1">BR1</option>
+            <option value="jp1">JP1</option>
+            <option value="la1">LA1</option>
+            <option value="la2">LA2</option>
+            <option value="oc1">OC1</option>
+            <option value="ru">RU</option>
+            <option value="tr1">TR1</option>
+            <option value="ph2">PH2</option>
+            <option value="sg2">SG2</option>
+            <option value="th2">TH2</option>
+            <option value="tw2">TW2</option>
+            <option value="vn2">VN2</option>
+          </select>
+          <button type="submit">Check live game</button>
+          <p id="live-status" class="status-text muted">No player checked yet.</p>
+        </form>
+      </section>
+
+      <section id="results" class="results hidden">
+
+        <section class="panel identity-panel">
+          <div>
+            <p class="eyebrow">Now spectating</p>
+            <h2 id="player-name">-</h2>
+          </div>
+          <div id="game-meta" class="identity-meta"></div>
+        </section>
+
+        <div class="teams-grid">
+          <section class="panel team-panel team-panel--blue">
+            <div class="panel-heading">
+              <p class="eyebrow team-eyebrow--blue">Blue side</p>
+              <h2>Team 1</h2>
+            </div>
+            <div id="blue-team" class="participants-list"></div>
+          </section>
+
+          <section class="panel team-panel team-panel--red">
+            <div class="panel-heading">
+              <p class="eyebrow team-eyebrow--red">Red side</p>
+              <h2>Team 2</h2>
+            </div>
+            <div id="red-team" class="participants-list"></div>
+          </section>
+        </div>
+
+        <section class="panel" id="bans-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Draft</p>
+            <h2>Bans</h2>
+          </div>
+          <div id="bans-grid" class="bans-grid"></div>
+        </section>
+
+      </section>
+
+      <footer class="site-footer">
+        <p>Rift Ledger &mdash; Local League of Legends stats tracker</p>
+        <p>Not affiliated with Riot Games &middot; <a href="https://developer.riotgames.com" target="_blank" rel="noopener">Riot API</a></p>
+      </footer>
+
+    </main>
+
+    <script src="/live.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rift Ledger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <main class="shell">
+
+      <nav class="site-nav">
+        <a href="/" class="nav-brand">Rift Ledger</a>
+        <a href="/" class="nav-link nav-link--active">Player Stats</a>
+        <a href="/live.html" class="nav-link">Live Game</a>
+        <a href="/settings.html" class="nav-link">Settings</a>
+      </nav>
+
+      <section class="hero panel">
+        <p class="eyebrow">League of Legends tracker</p>
+        <h1>Rift Ledger</h1>
+        <p class="lede">
+          Use a backend Riot API key or save one locally, search any Riot ID, and pull ranked plus recent match stats from a single local dashboard.
+        </p>
+        <div class="hero-meta">
+          <span>Local-first</span>
+          <span>Server-side API key</span>
+          <span>Prototype-ready</span>
+        </div>
+      </section>
+
+      <section class="panel" style="margin-top: 18px;">
+          <div class="panel-heading">
+            <p class="eyebrow">Player lookup</p>
+            <h2>Search a Riot ID</h2>
+          </div>
+          <form id="search-form" class="stacked-form">
+            <div class="field-row">
+              <div>
+                <label for="game-name">Game name</label>
+                <input id="game-name" name="gameName" placeholder="Doublelift" required />
+              </div>
+              <div>
+                <label for="tag-line">Tag line</label>
+                <input id="tag-line" name="tagLine" placeholder="NA1" required />
+              </div>
+            </div>
+            <label for="region">Platform region</label>
+            <select id="region" name="region">
+              <option value="na1">NA1</option>
+              <option value="euw1">EUW1</option>
+              <option value="eun1">EUN1</option>
+              <option value="kr">KR</option>
+              <option value="br1">BR1</option>
+              <option value="jp1">JP1</option>
+              <option value="la1">LA1</option>
+              <option value="la2">LA2</option>
+              <option value="oc1">OC1</option>
+              <option value="ru">RU</option>
+              <option value="tr1">TR1</option>
+              <option value="ph2">PH2</option>
+              <option value="sg2">SG2</option>
+              <option value="th2">TH2</option>
+              <option value="tw2">TW2</option>
+              <option value="vn2">VN2</option>
+            </select>
+            <button type="submit">Load stats</button>
+            <p id="search-status" class="status-text muted">No player loaded yet.</p>
+          </form>
+      </section>
+
+      <section id="results" class="results hidden">
+        <section class="panel identity-panel">
+          <div class="identity-left">
+            <div class="profile-icon-wrap">
+              <img class="profile-icon" id="profile-icon" alt="Profile icon" />
+            </div>
+            <div>
+              <p class="eyebrow">Player snapshot</p>
+              <h2 id="player-name">-</h2>
+            </div>
+          </div>
+          <div class="identity-meta" id="player-meta"></div>
+        </section>
+
+        <section class="grid metrics-grid" id="metrics"></section>
+
+        <section class="panel hidden" id="advice-panel"></section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Ranked</p>
+            <h2>Queue standings</h2>
+          </div>
+          <div id="ranked-grid" class="ranked-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Recent matches</p>
+            <h2>Match history</h2>
+          </div>
+          <div id="matches-grid" class="matches-grid"></div>
+          <div id="show-more-wrap" class="show-more-wrap"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Rift Ledger &mdash; Local League of Legends stats tracker</p>
+      <p>Not affiliated with Riot Games &middot; <a href="https://developer.riotgames.com" target="_blank" rel="noopener">Riot API</a></p>
+    </footer>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
