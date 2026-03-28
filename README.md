@@ -1,9 +1,12 @@
 # Rift Ledger
 
+> **100% vibe coded.** Every line of this project was written by AI (GitHub Copilot) through natural language prompts. No manual code was written.
+
 A local League of Legends stats dashboard built with Node.js + Express. Search any Riot ID to pull ranked standings, match history, performance metrics, and personalised coaching tips — all proxied server-side so your API key never reaches the browser.
 
 ![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
 ![Riot API](https://img.shields.io/badge/Riot-API-red?logo=riotgames)
+![Vibe Coded](https://img.shields.io/badge/vibe%20coded-100%25-blueviolet)
 
 ---
 
