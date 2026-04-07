@@ -412,25 +412,28 @@ button:disabled {
 }
 
 .nav-link {
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: var(--radius-xs);
-  border: none;
-  background: transparent;
-  color: var(--muted);
+  border: 1px solid var(--line-strong);
+  background: #111;
+  color: #999;
   font: 500 0.85rem 'Inter', 'Space Grotesk', sans-serif;
   text-decoration: none;
-  transition: color 150ms ease, background 150ms ease;
+  transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
   letter-spacing: 0.01em;
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
+  background: #1a1a1a;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav-link--active {
-  background: rgba(255, 255, 255, 0.07);
-  color: #fff;
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  font-weight: 700;
 }
 
 /* ── Live game ───────────────────────────────────────────── */

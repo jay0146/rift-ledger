@@ -2,7 +2,7 @@
 
 > **100% vibe coded.** Every line of this project was written by AI (GitHub Copilot) through natural language prompts. No manual code was written.
 
-A local League of Legends stats dashboard built with Node.js + Express. Search any Riot ID to pull ranked standings, match history, performance metrics, and personalised coaching tips — all proxied server-side so your API key never reaches the browser.
+A League of Legends stats dashboard built with Node.js + Express, deployed on **Azure App Service**. Search any Riot ID to pull ranked standings, match history, performance metrics, and personalised coaching tips — all proxied server-side so your API key never reaches the browser.
 
 ![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
 ![Riot API](https://img.shields.io/badge/Riot-API-red?logo=riotgames)
@@ -36,6 +36,18 @@ A local League of Legends stats dashboard built with Node.js + Express. Search a
 
 ---
 
+## Deployment
+
+This app is hosted on **Azure App Service (Windows)**. A `web.config` is included in the root to route requests through iisnode to `server.js`.
+
+Set `RIOT_API_KEY` as an Application Setting in Azure:
+
+```
+Azure Portal → App Service → Settings → Environment variables → Add RIOT_API_KEY
+```
+
+---
+
 ## Run locally
 
 ```bash
@@ -65,6 +77,7 @@ node server.js
 
 ```
 server.js           Express server + Riot API proxy
+web.config          IIS/iisnode config for Azure App Service on Windows
 public/
   index.html        Player stats page
   app.js            Player stats logic
@@ -72,7 +85,7 @@ public/
   live.js           Live game logic
   settings.html     Settings page
   settings.js       API key management + countdown timer
-  styles.css        Shared dark-theme styles
+  styles.css        Shared styles
 ```
 
 ---
@@ -89,5 +102,6 @@ public/
 
 - **Backend**: Node.js, Express
 - **Frontend**: Vanilla HTML / CSS / JavaScript (no build step)
-- **Fonts**: Space Grotesk + IBM Plex Mono (Google Fonts)
+- **Fonts**: Inter + IBM Plex Mono (Google Fonts)
+- **Hosting**: Azure App Service (Windows, iisnode)
 - **Data**: Riot API (account-v1, summoner-v4, league-v4, match-v5, spectator-v5) + Data Dragon CDN
